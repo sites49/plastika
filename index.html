@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Plastika: фитнес и растяжка в Магадане</title>
+<meta name="description" content="Студии фитнеса Plastika в Магадане: Якутская 11, Берзина 11, Коммуны 17а. Тренажёрный зал, групповые тренировки, растяжка, персональные тренировки.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%235b21b6'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial Black,Arial' font-weight='900' font-size='17' fill='%23fff'%3EP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700&family=Onest:wght@400;500;600&display=swap">
+<style>
+/* Цвета из прайса студии: фиолетовый с переходом в розовый. Белая страница, кнопки-капсулы,
+   абонементы во вкладках, тёмно-фиолетовый подвал. */
+:root {
+  --bg: #ffffff;
+  --soft: #f5f3f8;
+  --ink: #17141f;
+  --muted: #706b7c;
+  --line: #e8e4f0;
+  --accent: #5b21b6;
+  --accent-deep: #45178c;
+  --dark: #17111f;
+  --wa: #25d366; --tg: #2aabee; --vk: #0077ff; --max: #7a4dff;
+  --f: "Onest", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --fd: "Unbounded", "Arial Black", sans-serif;
+  --wrap: 1180px;
+}
+* { box-sizing: border-box }
+html { scroll-behavior: smooth }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.6 var(--f); -webkit-font-smoothing: antialiased }
+img { display: block; max-width: 100% }
+a { color: inherit }
+button { font: inherit; color: inherit }
+.wrap { max-width: var(--wrap); margin: 0 auto; padding-inline: 20px }
+h1, h2, h3 { margin: 0; font-weight: 700; text-wrap: balance }
+h1, h2 { font-family: var(--fd); letter-spacing: -0.02em }
+.ico { width: 18px; height: 18px; flex: 0 0 auto; fill: currentColor }
+.eyebrow { font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 600 }
+
+.demo { background: var(--dark); color: #fff; font-size: 12.5px; text-align: center; padding: 7px 16px }
+
+header { position: sticky; top: 0; z-index: 30; background: rgba(255,255,255,.94); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line) }
+.bar { display: flex; align-items: center; gap: 28px; height: 72px }
+.logo { text-decoration: none; display: grid; gap: 5px; line-height: 1; margin-right: auto }
+.logo b { font: 700 21px var(--fd); letter-spacing: .06em; color: var(--ink); margin-left: -1px }
+.logo small { font-size: 11px; color: var(--muted); letter-spacing: .12em; text-transform: uppercase }
+nav { display: flex; gap: 24px; font-size: 15px }
+nav a { text-decoration: none; color: var(--muted); transition: color .2s }
+nav a:hover { color: var(--ink) }
+.icons { display: flex; gap: 6px }
+.icons a { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; border: 1px solid var(--line); transition: border-color .2s, transform .2s }
+.icons a:hover { transform: translateY(-1px); border-color: currentColor }
+.icons .wa { color: var(--wa) } .icons .tg { color: var(--tg) } .icons .vk { color: var(--vk) }
+@media (max-width: 960px) { nav { display: none } .bar { gap: 12px } }
+@media (max-width: 560px) { .icons .vk, .bar .pill-out { display: none } }
+
+.pill, .pill-out { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 52px; padding: 0 28px; border-radius: 999px; font: 600 15.5px var(--f); text-decoration: none; cursor: pointer; white-space: nowrap; transition: background .25s, color .25s, transform .15s, box-shadow .25s, border-color .25s }
+.pill { background: var(--accent); color: #fff; border: 0 }
+.pill:hover { background: var(--accent-deep); box-shadow: 0 10px 26px rgba(91,33,182,.28) }
+.pill-out { background: transparent; color: var(--accent); border: 1.5px solid var(--accent) }
+.pill-out:hover { background: var(--accent); color: #fff }
+.pill:active, .pill-out:active { transform: scale(.97) }
+.bar .pill-out { height: 42px; padding: 0 20px }
+
+/* первый экран */
+.hero { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 56px; align-items: center; padding-block: 56px 72px }
+.hero-text { display: grid; gap: 24px }
+.hero h1 { font-size: clamp(38px, 5.2vw, 72px); line-height: 1.04; margin-left: -0.015em }
+.hero h1 .acc { color: var(--accent) }
+/* буквы заголовка тянутся к курсору: подъём и смена цвета с плавным затуханием по расстоянию */
+.hero h1 { position: relative } /* offsetParent для букв: их исходные места не зависят от сдвига */
+.hero h1 .w { display: inline-block; white-space: nowrap }
+/* буквы рассыпаются от курсора и пружинят обратно */
+.hero h1 .ch { display: inline-block; --t: 0; --dx: 0px; --dy: 0px; --r: 0deg; --from: var(--ink); --to: var(--accent);
+  color: color-mix(in srgb, var(--to) calc(var(--t) * 100%), var(--from));
+  transform: translate(var(--dx), var(--dy)) rotate(var(--r));
+  transition: transform .6s cubic-bezier(.34,1.56,.64,1), color .4s }
+
+/* фон первого экрана: сетка точек, свечение и подсветка точек вокруг курсора */
+.hero-zone { position: relative; overflow: hidden; --mx: 70%; --my: 40% }
+.hero-zone > .wrap { position: relative; z-index: 1 }
+.hero-bg { position: absolute; inset: 0; pointer-events: none }
+.hero-bg .dots, .hero-bg .lit { position: absolute; inset: 0; background-image: radial-gradient(circle, var(--c) 1.2px, transparent 1.6px); background-size: 24px 24px }
+.hero-bg .dots { --c: rgba(23,20,31,.13); -webkit-mask: radial-gradient(ellipse 80% 70% at 60% 45%, #000 30%, transparent 75%); mask: radial-gradient(ellipse 80% 70% at 60% 45%, #000 30%, transparent 75%) }
+.hero-bg .lit { --c: rgba(91,33,182,.75); -webkit-mask: radial-gradient(circle 190px at var(--mx) var(--my), #000, transparent 70%); mask: radial-gradient(circle 190px at var(--mx) var(--my), #000, transparent 70%); opacity: 0; transition: opacity .4s }
+.hero-zone:hover .hero-bg .lit { opacity: 1 }
+.hero-bg .glow { position: absolute; width: 640px; height: 640px; right: -120px; top: -160px; border-radius: 50%; background: radial-gradient(circle, rgba(91,33,182,.22), rgba(91,33,182,0) 65%); filter: blur(20px); animation: drift 18s ease-in-out infinite alternate }
+.hero-bg .glow.two { width: 520px; height: 520px; right: auto; left: 18%; top: auto; bottom: -260px; background: radial-gradient(circle, rgba(176,141,87,.16), rgba(176,141,87,0) 65%); animation-duration: 23s; animation-direction: alternate-reverse }
+@keyframes drift { 0% { transform: translate(0, 0) scale(1) } 50% { transform: translate(-60px, 40px) scale(1.08) } 100% { transform: translate(30px, 80px) scale(.95) } }
+
+/* наклон за курсором: карточки, студии, фото первого экрана */
+.tilt { transform-style: preserve-3d; will-change: transform; transition: transform .5s cubic-bezier(.2,.7,.2,1) }
+.tilt.moving { transition: transform .08s linear }
+.tilt::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity .3s;
+  background: radial-gradient(circle 220px at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,.35), transparent 60%) }
+.tilt.moving::after { opacity: 1 }
+.card, .studio, .shot .frame { position: relative }
+.hero h1 .acc .ch { --from: var(--accent); --to: #2a0e5c }
+.hero .who { margin: -6px 0 0; font: 600 clamp(19px, 2vw, 24px)/1.3 var(--f) }
+.hero p { margin: 0; font-size: 18px; color: var(--muted); max-width: 31em }
+.cta { display: flex; flex-wrap: wrap; gap: 12px }
+.shot { position: relative; justify-self: end; width: min(100%, 450px) }
+.shot .frame { border-radius: 24px; overflow: hidden; aspect-ratio: 4 / 5 }
+.shot .frame img { width: 100%; height: 100%; object-fit: cover }
+.tag { position: absolute; left: -32px; bottom: 44px; background: #fff; border-radius: 20px; padding: 16px 20px; display: grid; gap: 4px; box-shadow: 0 16px 40px rgba(29,18,51,.2); max-width: 220px }
+.tag b { font: 700 30px/1 var(--fd); color: var(--accent) }
+.tag span { font-size: 13.5px; line-height: 1.3; color: var(--ink) }
+@media (max-width: 900px) {
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 36px; padding-block: 32px 48px }
+  .shot { justify-self: center; width: min(100%, 380px) }
+  .tag { left: -8px }
+}
+
+.facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-block: 1px solid var(--line) }
+.fact { padding: 28px 28px 26px; display: grid; gap: 8px; align-content: start }
+.fact + .fact { border-left: 1px solid var(--line) }
+.fact:first-child { padding-left: 0 }
+.fact b { font: 700 clamp(32px, 3.8vw, 48px)/1 var(--fd); letter-spacing: -0.02em; color: var(--accent) }
+.fact span { color: var(--muted); font-size: 15px }
+@media (max-width: 720px) { .facts { grid-template-columns: minmax(0, 1fr) } .fact + .fact { border-left: 0; border-top: 1px solid var(--line) } .fact { padding-inline: 0 } }
+
+section { padding-block: 88px }
+.sec-head { display: grid; gap: 12px; margin-bottom: 40px }
+.sec-head h2 { font-size: clamp(30px, 3.8vw, 48px); line-height: 1.06; margin-left: -0.045em }
+.sec-head p { margin: 0; color: var(--muted); max-width: 38em }
+
+/* направления */
+.list { border-top: 1px solid var(--ink) }
+.row { display: grid; grid-template-columns: 104px minmax(0, 1fr) auto; gap: 28px; align-items: center; padding-block: 20px; border-bottom: 1px solid var(--line) }
+.row .ph { width: 104px; aspect-ratio: 1; border-radius: 18px; overflow: hidden; background: var(--soft) }
+.row .ph img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s cubic-bezier(.2,.7,.2,1) }
+.row:hover .ph img { transform: scale(1.07) }
+.row h3 { font: 600 clamp(18px, 1.9vw, 22px)/1.2 var(--fd); letter-spacing: -0.01em }
+.row p { margin: 6px 0 0; color: var(--muted); font-size: 15px; max-width: 40em }
+.row .pill-out { height: 44px; padding: 0 22px }
+@media (max-width: 820px) {
+  .row { grid-template-columns: 80px minmax(0, 1fr); gap: 12px 18px; align-items: start }
+  .row .ph { width: 80px; grid-row: span 2 }
+  .row .pill-out { justify-self: start }
+}
+
+/* абонементы: вкладки и карточки */
+.prices-sec { background: var(--soft) }
+.tabs { display: inline-flex; gap: 4px; padding: 4px; background: #fff; border-radius: 999px; border: 1px solid var(--line); margin-bottom: 28px; max-width: 100%; overflow-x: auto }
+.tabs button { border: 0; background: transparent; height: 42px; padding: 0 20px; border-radius: 999px; font-weight: 500; font-size: 15px; cursor: pointer; white-space: nowrap; color: var(--muted); transition: background .2s, color .2s }
+.tabs button[aria-selected="true"] { background: var(--accent); color: #fff }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px }
+.card { background: #fff; border-radius: 22px; padding: 24px; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; border: 1px solid transparent; transition: border-color .2s, transform .2s }
+.card:hover { border-color: var(--accent) }
+.card.hit { background: var(--dark); color: #fff }
+.card.hit .per, .card.hit p { color: #c9bfe0 }
+.card .name { font-weight: 600; font-size: 16px }
+.card .sum { font: 700 30px/1 var(--fd); letter-spacing: -0.02em }
+.card .per { color: var(--muted); font-size: 14px; margin-top: -4px }
+.card p { margin: 4px 0 0; color: var(--muted); font-size: 14.5px }
+.card .badge-hit { justify-self: start; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: #ece6f7; color: var(--accent) }
+.card .pill, .card .pill-out { margin-top: auto; height: 44px; padding: 0 20px }
+.card p { flex: 0 0 auto; margin-bottom: 10px }
+.card.hit .pill-out { color: #fff; border-color: rgba(255,255,255,.5) }
+.card.hit .pill-out:hover { background: #fff; color: var(--dark) }
+.p-note { margin: 18px 0 0; font-size: 13.5px; color: var(--muted) }
+
+/* студии */
+.studios { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px }
+@media (max-width: 860px) { .studios { grid-template-columns: minmax(0, 1fr) } }
+.studio { border: 1px solid var(--line); border-radius: 22px; padding: 26px; display: grid; gap: 8px; align-content: start }
+.studio .n { font: 700 13px var(--fd); color: var(--accent); letter-spacing: .04em }
+.studio h3 { font: 600 22px/1.2 var(--fd); letter-spacing: -0.01em }
+.studio p { margin: 0; color: var(--muted); font-size: 15px }
+.studio a { margin-top: 8px; font-size: 14.5px; color: var(--accent); font-weight: 500; text-decoration: none }
+.studio a:hover { text-decoration: underline }
+
+.gal { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 12px; height: 560px; margin-top: 14px }
+.gal div { border-radius: 22px; overflow: hidden; background: var(--soft) }
+.gal div:first-child, .gal div:nth-child(2) { grid-row: span 2 }
+.gal img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(.2,.7,.2,1) }
+.gal div:hover img { transform: scale(1.04) }
+@media (max-width: 760px) { .gal { grid-template-columns: 1fr 1fr; grid-template-rows: 220px 220px 220px; height: auto } .gal div:first-child { grid-column: span 2; grid-row: auto } }
+
+.steps-sec { background: var(--soft) }
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px }
+@media (max-width: 800px) { .steps { grid-template-columns: minmax(0, 1fr); gap: 28px } }
+.step { display: grid; gap: 10px; align-content: start; border-top: 1px solid var(--ink); padding-top: 18px }
+.step .n { font: 700 34px/1 var(--fd); color: var(--accent) }
+.step h3 { font-size: 20px; font-weight: 600 }
+.step p { margin: 0; color: var(--muted) }
+
+footer { background: var(--dark); color: #ece7f7; padding-block: 64px 32px }
+footer a { color: inherit }
+.f-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; align-items: start }
+@media (max-width: 860px) { .f-top { grid-template-columns: minmax(0, 1fr) } }
+.f-top h2 { font-size: clamp(28px, 3.4vw, 42px); line-height: 1.1; color: #fff }
+.f-top .pill { margin-top: 22px; background: #fff; color: var(--dark) }
+.f-top .pill:hover { background: #ece4ff }
+.fcol { display: grid; gap: 10px; font-size: 15px; align-content: start }
+.fcol h4 { margin: 0 0 4px; font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase; color: #b9a6ea; font-weight: 600 }
+.fcol a { text-decoration: none; opacity: .9 }
+.fcol a:hover { opacity: 1; text-decoration: underline }
+.soc { display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap }
+.soc a { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; color: #fff; opacity: 1 }
+.soc .wa { background: var(--wa) } .soc .tg { background: var(--tg) } .soc .vk { background: var(--vk) } .soc .max { background: var(--max) }
+.legal { border-top: 1px solid rgba(255,255,255,.14); margin-top: 48px; padding-top: 22px; display: grid; gap: 8px; font-size: 13px; color: #a99fbf }
+.legal p { margin: 0; max-width: 72em }
+.legal nav { display: flex; gap: 20px; flex-wrap: wrap; font-size: 13px }
+.legal nav a { color: #a99fbf }
+
+/* окно записи */
+.sheet-bg { position: fixed; inset: 0; background: rgba(29,18,51,.5); z-index: 50; opacity: 0; pointer-events: none; transition: opacity .25s }
+.sheet { position: fixed; left: 50%; bottom: 0; z-index: 51; width: min(440px, 100%); transform: translate(-50%, 104%); background: #fff; border-radius: 28px 28px 0 0; padding: 22px 22px calc(22px + env(safe-area-inset-bottom, 0px)); transition: transform .35s cubic-bezier(.2,.8,.2,1) }
+@media (min-width: 700px) { .sheet { bottom: 50%; border-radius: 28px; transform: translate(-50%, 60%) scale(.96); opacity: 0; transition: transform .3s cubic-bezier(.2,.8,.2,1), opacity .25s } }
+.open .sheet-bg { opacity: 1; pointer-events: auto }
+.sheet { pointer-events: none } .open .sheet { pointer-events: auto } /* скрытое окно не должно ловить мышь */
+.open .sheet { transform: translate(-50%, 0) }
+@media (min-width: 700px) { .open .sheet { transform: translate(-50%, 50%) scale(1); opacity: 1 } }
+.sheet-top { display: flex; gap: 12px; align-items: start; margin-bottom: 18px }
+.sheet-top b { display: block; font: 600 21px/1.25 var(--fd); margin-top: 4px }
+.x { margin-left: auto; width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--line); background: #fff; cursor: pointer; font-size: 16px; line-height: 1; flex: 0 0 auto }
+.via { display: grid; gap: 8px }
+.via a, .via button { display: flex; align-items: center; gap: 12px; height: 54px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--line); background: #fff; text-decoration: none; font-weight: 500; font-size: 16px; cursor: pointer; transition: border-color .2s, background .2s }
+.via a:hover, .via button:hover { border-color: var(--accent); background: var(--soft) }
+.via .badge { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; color: #fff }
+.via .hint { margin-left: auto; color: var(--muted); font-weight: 400; font-size: 13px }
+.note { font-size: 12.5px; color: var(--muted); margin: 14px 0 0 }
+.note a { color: var(--muted) }
+.toast { position: fixed; left: 50%; top: 18px; transform: translate(-50%, -80px); background: var(--ink); color: #fff; padding: 10px 18px; border-radius: 999px; z-index: 60; font-size: 14px; transition: transform .3s }
+.toast.on { transform: translate(-50%, 0) }
+
+.mbar { display: none }
+@media (max-width: 680px) {
+  .mbar { display: flex; gap: 8px; position: fixed; left: 12px; right: 12px; bottom: calc(env(safe-area-inset-bottom, 0px) + 12px); z-index: 40 }
+  .mbar .pill { flex: 1; height: 54px; box-shadow: 0 10px 28px rgba(0,0,0,.22) }
+  .mbar .sq { flex: 0 0 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; color: #fff; box-shadow: 0 10px 28px rgba(0,0,0,.22) }
+  footer { padding-bottom: 100px }
+}
+
+.js .rise { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1) }
+.js .rise.in { opacity: 1; transform: none }
+@keyframes up { from { opacity: 0; transform: translateY(24px) } to { opacity: 1; transform: none } }
+@keyframes zoom { from { opacity: 0; transform: scale(1.08) } to { opacity: 1; transform: none } }
+.hero-text > * { animation: up .8s cubic-bezier(.2,.7,.2,1) both }
+.hero-text > *:nth-child(2) { animation-delay: .08s } .hero-text > *:nth-child(3) { animation-delay: .16s } .hero-text > *:nth-child(4) { animation-delay: .24s }
+.shot .frame img { animation: zoom 1.2s cubic-bezier(.2,.7,.2,1) both }
+.tag { animation: up .8s cubic-bezier(.2,.7,.2,1) .7s both }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important }
+  .js .rise { opacity: 1; transform: none }
+}
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2a9.9 9.9 0 0 0-8.5 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.4 14c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .2-3.2-.7-2.7-1.1-4.4-3.9-4.6-4.1-.1-.2-1.1-1.5-1.1-2.8 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.2 1.6 1.9 1.1 1 2 1.3 2.3 1.4.3.2.5.1.6 0l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4Z"/></symbol>
+  <symbol id="i-tg" viewBox="0 0 24 24"><path d="m21.9 4.4-3.2 15c-.2 1.1-.9 1.3-1.7.8l-4.8-3.5-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.4-.1-.6-.6-.2l-11 6.9-4.7-1.5c-1-.3-1-1 .2-1.5L20.5 3c.9-.3 1.7.2 1.4 1.4Z"/></symbol>
+  <symbol id="i-vk" viewBox="0 0 24 24"><path d="M12.9 18.2C6.8 18.2 3.3 14 3.1 7h3.1c.1 5.1 2.4 7.3 4.2 7.7V7h2.9v4.4c1.8-.2 3.7-2.2 4.3-4.4h2.9a8.6 8.6 0 0 1-3.9 5.6 9 9 0 0 1 4.6 5.6h-3.2a5.6 5.6 0 0 0-4.7-4v4h-.4Z"/></symbol>
+  <symbol id="i-max" viewBox="0 0 24 24"><path d="M12 2.5c-5.4 0-9.5 3.9-9.5 9.1 0 2.3.8 4.4 2.2 6l-.7 3.4c-.1.5.4.9.9.7l3.4-1.5c1.1.4 2.4.6 3.7.6 5.4 0 9.5-3.9 9.5-9.2S17.4 2.5 12 2.5Zm4.6 12.6h-1.9V10.6l-2 3.4h-1.4l-2-3.4v4.5H7.4V7.8h1.7l2.9 4.9 2.9-4.9h1.7v7.3Z"/></symbol>
+  <symbol id="i-tel" viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2Z"/></symbol>
+</svg>
+
+<div class="demo">Демо-версия сайта для студий фитнеса Plastika. Автор: Алексей</div>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#top"><b>PLASTIKA</b><small>студии фитнеса</small></a>
+    <nav aria-label="Разделы"><a href="#dirs">Направления</a><a href="#prices">Абонементы</a><a href="#studios">Студии</a><a href="#contacts">Контакты</a></nav>
+    <div class="icons">
+      <a class="wa" href="https://wa.me/79148583910" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="ico"><use href="#i-wa"/></svg></a>
+      <a class="tg" href="https://t.me/+79148583910" target="_blank" rel="noopener" aria-label="Telegram"><svg class="ico"><use href="#i-tg"/></svg></a>
+      <a class="vk" href="https://vk.com/plastikamagadan" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg class="ico"><use href="#i-vk"/></svg></a>
+    </div>
+    <button class="pill-out" type="button" data-book="Пробная тренировка">Записаться</button>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero-zone">
+  <div class="hero-bg" aria-hidden="true"><div class="dots"></div><div class="lit"></div><div class="glow"></div><div class="glow two"></div></div>
+  <div class="wrap hero">
+    <div class="hero-text">
+      <h1>Фитнес и растяжка <span class="acc">в&nbsp;Магадане</span></h1>
+      <p class="who">Plastika: три студии в разных районах города</p>
+      <p>Тренажёрный зал и больше 25 групповых направлений: силовые, кардио, танцевальные, йога и растяжка. Всё для занятий есть в студии, нужны только форма и кроссовки.</p>
+      <div class="cta">
+        <button class="pill" type="button" data-book="Пробная тренировка">Записаться на пробную</button>
+        <a class="pill-out" href="#prices">Абонементы</a>
+      </div>
+    </div>
+    <div class="shot">
+      <div class="frame"><img src="img/hero.jpg" alt="Тренировка в студии Plastika"></div>
+      <div class="tag"><b>1000 ₽</b><span>старт для новичков: консультация и две пробные тренировки</span></div>
+    </div>
+  </div>
+  </div>
+
+  <div class="wrap">
+    <div class="facts">
+      <div class="fact rise"><b>3</b><span>студии: Якутская 11, Берзина 11 и Коммуны 17а</span></div>
+      <div class="fact rise"><b>25+</b><span>направлений групповых тренировок с утра до вечера</span></div>
+      <div class="fact rise"><b>от 550 ₽</b><span>за групповое занятие по абонементу</span></div>
+    </div>
+  </div>
+
+  <section id="dirs">
+    <div class="wrap">
+      <div class="sec-head rise"><span class="eyebrow">Направления</span><h2 style="margin-left:-0.02em">Чем заниматься</h2><p>Не знаете, с чего начать? Администратор подберёт тренировки под ваш уровень и цель.</p></div>
+      <div class="list" id="list"></div>
+    </div>
+  </section>
+
+  <section class="prices-sec" id="prices">
+    <div class="wrap">
+      <div class="sec-head rise"><span class="eyebrow">Абонементы</span><h2>Цены</h2></div>
+      <div class="tabs" role="tablist" id="tabs"></div>
+      <div class="cards" id="cards"></div>
+      <p class="p-note" id="pnote"></p>
+    </div>
+  </section>
+
+  <section id="studios">
+    <div class="wrap">
+      <div class="sec-head rise"><span class="eyebrow">Студии</span><h2>Где мы</h2><p>Абонемент на групповые тренировки действует во всех студиях. Ежедневно с 7:30 до 22:00.</p></div>
+      <div class="studios">
+        <div class="studio rise"><span class="n">01</span><h3>Якутская, 11</h3><p>Двухэтажное здание сразу за библиотекой имени Пушкина.</p><a href="https://2gis.ru/magadan/search/Plastika%20%D0%AF%D0%BA%D1%83%D1%82%D1%81%D0%BA%D0%B0%D1%8F%2011" target="_blank" rel="noopener">Открыть в 2ГИС</a></div>
+        <div class="studio rise"><span class="n">02</span><h3>Берзина, 11</h3><p>Четвёртый этаж.</p><a href="https://2gis.ru/magadan/search/Plastika%20%D0%91%D0%B5%D1%80%D0%B7%D0%B8%D0%BD%D0%B0%2011" target="_blank" rel="noopener">Открыть в 2ГИС</a></div>
+        <div class="studio rise"><span class="n">03</span><h3>Коммуны, 17а</h3><p>Район СВГУ. Здесь тренажёрный зал и кардио-зона.</p><a href="https://2gis.ru/magadan/firm/70000001099117716" target="_blank" rel="noopener">Открыть в 2ГИС</a></div>
+      </div>
+      <div class="gal rise">
+        <div><img src="img/g_hall.jpg" alt="Зал для групповых тренировок" loading="lazy"></div>
+        <div><img src="img/g_cardio.jpg" alt="Тренажёрный зал" loading="lazy"></div>
+        <div><img src="img/g_desk.jpg" alt="Стойка администратора" loading="lazy"></div>
+        <div><img src="img/g_free.jpg" alt="Гантели" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps-sec" id="how">
+    <div class="wrap">
+      <div class="sec-head rise"><span class="eyebrow">Запись</span><h2>Как начать</h2></div>
+      <div class="steps">
+        <div class="step rise"><span class="n">01</span><h3>Напишите администратору</h3><p>WhatsApp, Telegram, ВКонтакте или телефон. Расскажите о цели и опыте.</p></div>
+        <div class="step rise"><span class="n">02</span><h3>Приходите на пробные</h3><p>Две пробные тренировки и консультация за 1000 ₽. Получите памятку для начинающих.</p></div>
+        <div class="step rise"><span class="n">03</span><h3>Записывайтесь в приложении</h3><p>Расписание и запись на занятия в приложении YPLASES для Android и iOS.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contacts">
+  <div class="wrap">
+    <div class="f-top">
+      <div>
+        <h2>Приходите на пробную тренировку</h2>
+        <button class="pill" type="button" data-book="Пробная тренировка">Записаться</button>
+      </div>
+      <div class="fcol">
+        <h4>Контакты</h4>
+        <span>Якутская 11, Берзина 11, Коммуны 17а</span>
+        <span>Ежедневно с 7:30 до 22:00</span>
+        <a href="tel:+79148583910">+7 914 858-39-10</a>
+        <a href="tel:+79148514313">+7 914 851-43-13</a>
+        <a href="tel:+79148516040">+7 914 851-60-40</a>
+        <div class="soc">
+          <a class="wa" href="https://wa.me/79148583910" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="ico"><use href="#i-wa"/></svg></a>
+          <a class="tg" href="https://t.me/+79148583910" target="_blank" rel="noopener" aria-label="Telegram"><svg class="ico"><use href="#i-tg"/></svg></a>
+          <a class="vk" href="https://vk.com/plastikamagadan" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg class="ico"><use href="#i-vk"/></svg></a>
+          <a class="max" href="https://max.ru/join/oobX03cJkWRuX25COa7GzCEaf3hq2TG1lyISuX0TzFI" target="_blank" rel="noopener" aria-label="Канал в MAX"><svg class="ico"><use href="#i-max"/></svg></a>
+        </div>
+      </div>
+      <div class="fcol">
+        <h4>Клиентам</h4>
+        <a href="#dirs">Направления</a>
+        <a href="#prices">Абонементы и цены</a>
+        <a href="#studios">Адреса студий</a>
+        <a href="https://taplink.cc/plastika_studio_magadan" target="_blank" rel="noopener">Правила посещения и оферта</a>
+      </div>
+    </div>
+    <div class="legal">
+      <p>ИП Исайкина К. Н., ИНН 490913902906, ОГРНИП [ОГРНИП]. Адреса студий: Магадан, Якутская улица, 11; улица Берзина, 11; улица Коммуны, 17а.</p>
+      <p>Сайт носит информационный характер и не является публичной офертой. Актуальные цены уточняйте у администратора.</p>
+      <nav aria-label="Документы"><a href="privacy.html">Политика конфиденциальности</a><a href="consent.html">Согласие на обработку персональных данных</a></nav>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <button class="pill" type="button" data-book="Пробная тренировка">Записаться</button>
+  <a class="sq" style="background:var(--wa)" href="https://wa.me/79148583910" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="ico"><use href="#i-wa"/></svg></a>
+  <a class="sq" style="background:var(--ink)" href="tel:+79148583910" aria-label="Позвонить"><svg class="ico"><use href="#i-tel"/></svg></a>
+</div>
+
+<div id="order" aria-hidden="true">
+  <div class="sheet-bg" data-close></div>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="o-name">
+    <div class="sheet-top">
+      <div><span class="eyebrow">Запись</span><b id="o-name"></b></div>
+      <button class="x" data-close aria-label="Закрыть">&#x2715;</button>
+    </div>
+    <div class="via">
+      <a id="o-wa" target="_blank" rel="noopener"><span class="badge" style="background:var(--wa)"><svg class="ico"><use href="#i-wa"/></svg></span>WhatsApp<span class="hint">текст уже готов</span></a>
+      <button id="o-tg" type="button"><span class="badge" style="background:var(--tg)"><svg class="ico"><use href="#i-tg"/></svg></span>Telegram<span class="hint">скопируем текст</span></button>
+      <button id="o-vk" type="button"><span class="badge" style="background:var(--vk)"><svg class="ico"><use href="#i-vk"/></svg></span>ВКонтакте<span class="hint">скопируем текст</span></button>
+      <a href="tel:+79148583910"><span class="badge" style="background:var(--ink)"><svg class="ico"><use href="#i-tel"/></svg></span>Позвонить<span class="hint">+7 914 858-39-10</span></a>
+    </div>
+    <p class="note">Записываясь, вы соглашаетесь с <a href="privacy.html">политикой конфиденциальности</a> и <a href="consent.html">обработкой персональных данных</a>.</p>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+document.documentElement.classList.add("js");
+// Заголовок по буквам: только там, где есть мышь и не просили меньше анимации
+(function magnet() {
+  const h = document.querySelector(".hero h1");
+  if (!matchMedia("(hover: hover) and (pointer: fine)").matches || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  h.setAttribute("aria-label", h.textContent.replace(/ /g, " "));
+  const split = node => {
+    for (const n of [...node.childNodes]) {
+      if (n.nodeType === 1) { split(n); continue }
+      const frag = document.createDocumentFragment();
+      n.textContent.split(/( )/).forEach(part => {
+        if (part === " ") return frag.append(" ");
+        if (!part) return;
+        const w = document.createElement("span"); w.className = "w"; w.setAttribute("aria-hidden", "true");
+        for (const c of part) { const s = document.createElement("span"); s.className = "ch"; s.textContent = c; w.append(s) }
+        frag.append(w);
+      });
+      n.replaceWith(frag);
+    }
+  };
+  split(h);
+  const chars = [...h.querySelectorAll(".ch")];
+  const R = 130, PUSH = 34; // радиус влияния курсора и максимальный разлёт, px
+  // центры букв от левого верха h1 по offset*: сдвиг transform на них не влияет, нет дрожания
+  let base = [];
+  const measure = () => { base = chars.map(c => [c.offsetLeft + c.offsetWidth / 2, c.offsetTop + c.offsetHeight / 2]) };
+  measure();
+  addEventListener("resize", measure);
+  document.fonts && document.fonts.ready.then(measure);
+  let mx = -1e4, my = -1e4, raf = 0;
+  const draw = () => {
+    raf = 0;
+    const hb = h.getBoundingClientRect();
+    chars.forEach((c, i) => {
+      const vx = hb.left + base[i][0] - mx, vy = hb.top + base[i][1] - my;
+      const d = Math.hypot(vx, vy) || 1;
+      const t = d < R ? (1 - d / R) ** 2 : 0;
+      c.style.setProperty("--t", Math.min(1, t * 1.6).toFixed(3));
+      c.style.setProperty("--dx", (vx / d * t * PUSH).toFixed(1) + "px");
+      c.style.setProperty("--dy", (vy / d * t * PUSH).toFixed(1) + "px");
+      c.style.setProperty("--r", ((i % 2 ? 1 : -1) * t * 18).toFixed(1) + "deg");
+    });
+  };
+  const zone = document.querySelector(".hero-zone");
+  zone.addEventListener("mousemove", e => {
+    mx = e.clientX; my = e.clientY; raf ||= requestAnimationFrame(draw);
+    const zb = zone.getBoundingClientRect();
+    zone.style.setProperty("--mx", e.clientX - zb.left + "px");
+    zone.style.setProperty("--my", e.clientY - zb.top + "px");
+  });
+  zone.addEventListener("mouseleave", () => { mx = my = -1e4; raf ||= requestAnimationFrame(draw) });
+
+  // наклон карточек за курсором с бликом
+  const MAXDEG = 7;
+  const tiltOn = el => {
+    el.classList.add("tilt");
+    el.addEventListener("mousemove", e => {
+      const b = el.getBoundingClientRect();
+      const px = (e.clientX - b.left) / b.width, py = (e.clientY - b.top) / b.height;
+      el.classList.add("moving");
+      el.style.transform = `perspective(900px) rotateX(${((.5 - py) * MAXDEG).toFixed(2)}deg) rotateY(${((px - .5) * MAXDEG).toFixed(2)}deg) translateZ(0)`;
+      el.style.setProperty("--gx", px * 100 + "%");
+      el.style.setProperty("--gy", py * 100 + "%");
+    });
+    el.addEventListener("mouseleave", () => { el.classList.remove("moving"); el.style.transform = "" });
+  };
+  document.querySelectorAll(".studio, .shot .frame").forEach(tiltOn);
+  // карточки цен перерисовываются при смене вкладки: вешаем заново
+  new MutationObserver(() => document.querySelectorAll("#cards .card:not(.tilt)").forEach(tiltOn))
+    .observe(document.getElementById("cards"), { childList: true });
+  document.querySelectorAll("#cards .card").forEach(tiltOn);
+})();
+// Направления: с Taplink студии. Цены: из прайс-листа студии в 2ГИС (обновлён 2026).
+const DIRS = [
+  { img: "power.jpg", name: "Силовые и функциональные", text: "Работа со своим весом, гантелями и на тренажёрах. Тонус, сила, выносливость." },
+  { img: "stretch.jpg", name: "Растяжка и йога", text: "Stretch class, Yoga+Stretching, «Здоровая спина». Спокойный темп, подходит новичкам." },
+  { img: "dance.jpg", name: "Кардио и танцевальные", text: "Зумба, танцевальные и кардио-тренировки. Fitness and Stretching для начального уровня почти каждый день." },
+  { img: "gym.jpg", name: "Тренажёрный зал", text: "Кардио-зона и силовые тренажёры на Коммуны, 17а. Утренний, вечерний или безлимитный абонемент." },
+  { img: "personal.jpg", name: "Персональные тренировки", text: "Тренер составит программу под вашу цель и поставит технику. Можно в мини-группе от 2 человек." },
+];
+const PRICES = {
+  "Групповые": { note: "Абонемент действует во всех студиях. При болезни или отпуске со справкой студия даёт бесплатную заморозку.", items: [
+    { name: "Разовое посещение", sum: 1000, text: "Одна тренировка на любое направление" },
+    { name: "8 тренировок", sum: 6200, per: "750 ₽ за занятие", text: "На месяц, любые направления" },
+    { name: "12 тренировок", sum: 7500, per: "650 ₽ за занятие", text: "На месяц, любые направления" },
+    { name: "Безлимит на месяц", sum: 9500, text: "Все направления без ограничений" },
+    { name: "24 тренировки", sum: 13000, per: "550 ₽ за занятие", text: "На два месяца", hit: "Дешевле за занятие" },
+    { name: "Безлимит на 3 месяца", sum: 25000, per: "8 300 ₽ в месяц", text: "Плюс бесплатная заморозка до 3 недель" },
+  ] },
+  "Тренажёрный зал": { note: "Утро с 7:30 до 16:00, вечер с 16:00 до 22:00. Есть абонементы на 3, 6 и 12 месяцев: на год утренний выходит 3 300 ₽ в месяц.", items: [
+    { name: "Утро, месяц", sum: 4500, text: "С 7:30 до 16:00" },
+    { name: "Вечер, месяц", sum: 5500, text: "С 16:00 до 22:00" },
+    { name: "Безлимит, месяц", sum: 7000, text: "Зал без ограничений по времени", hit: "В любое время" },
+    { name: "Разовое посещение", sum: 700, text: "Без абонемента" },
+  ] },
+  "Персональные": { note: "Для персональных тренировок в зале нужен действующий абонемент в тренажёрный зал.", items: [
+    { name: "Персональная тренировка", sum: 2000, text: "Один на один с тренером" },
+    { name: "8 персональных", sum: 13500, per: "1 650 ₽ за занятие", text: "В тренажёрном зале" },
+    { name: "Мини-группа", sum: 1200, from: true, per: "за человека", text: "От 2 до 5 человек с тренером" },
+    { name: "Вводная тренировка", sum: 1500, text: "Цели, техника, план на первые занятия", hit: "Для новичков" },
+  ] },
+};
+const WA = "79148583910";
+const rub = n => n.toLocaleString("ru-RU") + " ₽";
+
+document.getElementById("list").innerHTML = DIRS.map(s => `
+  <div class="row rise">
+    <div class="ph"><img src="img/${s.img}" alt="" loading="lazy"></div>
+    <div><h3>${s.name}</h3><p>${s.text}</p></div>
+    <button class="pill-out" type="button" data-book="${s.name}">Записаться</button>
+  </div>`).join("");
+
+const tabs = document.getElementById("tabs");
+tabs.innerHTML = Object.keys(PRICES).map((k, i) => `<button role="tab" aria-selected="${i === 0}" data-tab="${k}">${k}</button>`).join("");
+function showTab(k) {
+  tabs.querySelectorAll("button").forEach(b => b.setAttribute("aria-selected", b.dataset.tab === k));
+  const t = PRICES[k];
+  document.getElementById("cards").innerHTML = t.items.map(c => `
+    <div class="card${c.hit ? " hit" : ""}">
+      ${c.hit ? `<span class="badge-hit">${c.hit}</span>` : ""}
+      <span class="name">${c.name}</span>
+      <span class="sum">${c.from ? "от " : ""}${rub(c.sum)}</span>
+      ${c.per ? `<span class="per">${c.per}</span>` : ""}
+      <p>${c.text}</p>
+      <button class="${c.hit ? "pill" : "pill-out"}" type="button" data-book="${k}: ${c.name.toLowerCase()}">Хочу</button>
+    </div>`).join("");
+  document.getElementById("pnote").textContent = t.note;
+}
+tabs.addEventListener("click", e => { const b = e.target.closest("[data-tab]"); if (b) showTab(b.dataset.tab) });
+showTab("Групповые");
+
+const io = "IntersectionObserver" in window ? new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target) }
+}), { threshold: .12 }) : null;
+document.querySelectorAll(".rise").forEach(el => io ? io.observe(el) : el.classList.add("in"));
+
+const box = document.getElementById("order");
+let msg = "";
+function toast(t) { const el = document.getElementById("toast"); el.textContent = t; el.classList.add("on"); setTimeout(() => el.classList.remove("on"), 2200) }
+async function copyText() { try { await navigator.clipboard.writeText(msg); return true } catch { return false } }
+function openBook(what) {
+  msg = what === "Пробная тренировка" ? "Здравствуйте! Хочу прийти на пробную тренировку." : `Здравствуйте! Хочу записаться: ${what}.`;
+  document.getElementById("o-name").textContent = what;
+  document.getElementById("o-wa").href = `https://wa.me/${WA}?text=${encodeURIComponent(msg)}`;
+  box.classList.add("open"); box.setAttribute("aria-hidden", "false");
+}
+function closeBook() { box.classList.remove("open"); box.setAttribute("aria-hidden", "true") }
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-book]"); if (b) return openBook(b.dataset.book);
+  if (e.target.closest("[data-close]")) closeBook();
+});
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeBook() });
+// Telegram и ВК не подставляют текст по ссылке: копируем его и открываем чат
+for (const [id, url] of [["o-tg", "https://t.me/+79148583910"], ["o-vk", "https://vk.com/plastikamagadan"]]) {
+  document.getElementById(id).addEventListener("click", async () => {
+    toast(await copyText() ? "Текст скопирован, вставьте его в чат" : "Напишите, на какую тренировку хотите прийти");
+    window.open(url, "_blank", "noopener");
+  });
+}
+</script>
+<script>
+(function(){try{
+  var s='plastika';
+  if(location.search.indexOf('me')>-1)localStorage.setItem('own','1');
+  if(localStorage.getItem('own')||location.hostname!=='sites49.github.io')return;
+  var d=new Date(Date.now()+11*36e5).toISOString().slice(0,10);
+  ['all',d].forEach(function(k){fetch('https://abacus.jasoncameron.dev/hit/sites49/'+s+'-'+k,{mode:'cors'}).catch(function(){})});
+}catch(e){}})();
+</script>
+</body>
+</html>
